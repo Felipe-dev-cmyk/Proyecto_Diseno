@@ -16,6 +16,7 @@ def execute():
 
     # Ejecutar usando el orchestrator
     orchestrator = TBTAFOrchestrator()
-    execution_result = orchestrator.executeTestSuite(test_suite_location, test_bed_nodes)
+    test_suite = orchestrator.createTestSuite(test_suite_location)
+    execution_result = orchestrator.executeTestSuite(test_suite, test_bed_nodes)
 
     return jsonify({'status': 'success', 'details': execution_result}), 200
