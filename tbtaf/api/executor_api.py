@@ -19,4 +19,4 @@ def execute():
     test_suite = orchestrator.createTestSuite(test_suite_location)
     execution_result = orchestrator.executeTestSuite(test_suite, test_bed_nodes)
 
-    return jsonify({'status': 'success', 'details': execution_result}), 200
+    return jsonify({'status': 'success', 'details': execution_result.to_dict()}), 200
