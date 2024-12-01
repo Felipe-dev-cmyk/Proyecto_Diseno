@@ -1,0 +1,13 @@
+Ejecutar suites de pruebas
+/execute
+{
+    "test_id": "prueba2",
+    "test_suite_location": "../test/smoke",
+    "test_bed_nodes": ["localhost"]
+}
+
+Mandar correspondiente estatus de ejecución de una suite determinada
+/execution_status/prueba2
+
+Resultados parciales o totales de la ejecución de una suite determinada
+/results/prueba2

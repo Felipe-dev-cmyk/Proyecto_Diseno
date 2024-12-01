@@ -13,10 +13,14 @@ def execute():
 
     test_suite_location = data['test_suite_location']
     test_bed_nodes = data['test_bed_nodes']
+    test_id = data['test_id']
 
     # Ejecutar usando el orchestrator
     orchestrator = TBTAFOrchestrator()
-    test_suite = orchestrator.createTestSuite(test_suite_location)
+    test_suite = orchestrator.createTestSuite(test_id, test_suite_location)
     execution_result = orchestrator.executeTestSuite(test_suite, test_bed_nodes)
+
+    # Guardar el estado de ejecución
+    orchestrator.save_execution_state(execution_result.to_dict(), filename='execution_results.json')
 
     return jsonify({'status': 'success', 'details': execution_result.to_dict()}), 200

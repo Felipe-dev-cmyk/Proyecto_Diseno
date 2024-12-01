@@ -5,3 +5,4 @@ xhtml2pdf==0.2.7
 gitpython
 flask
 reportlab==3.6.13
+filelock
